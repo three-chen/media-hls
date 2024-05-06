@@ -186,8 +186,6 @@ export class EncoderHls {
   }
 
   public destroy() {
-    // if (this.ffmpegProcess) {
-    //   this.ffmpegProcess.kill('SIGINT')
-    // }
+    ipcRenderer.send('ffmpegSpawnKill', '')
   }
 }
