@@ -29,7 +29,6 @@ export class DecoderHls {
 
   public setContainer(container: HTMLVideoElement): void {
     this.container = container
-    this.attachMediaElement()
   }
 
   public attachMediaElement() {
@@ -40,6 +39,7 @@ export class DecoderHls {
 
   public loadAndPlay() {
     if (this.player && this.url && this.container) {
+      this.attachMediaElement()
       this.player?.loadSource(this.url)
     } else {
       console.error('loadAndPlay error')
